@@ -7,10 +7,10 @@ import com.rick.and.morty.domain.base.Resource
 import com.rick.and.morty.domain.model.*
 import javax.inject.Inject
 
-class GetAnimationCharacterDataSource @Inject constructor(private val api: RickAndMortyApiClient): BaseDataSource() {
+class GetAnimationCharacterListDataSource @Inject constructor(private val api: RickAndMortyApiClient): BaseDataSource() {
 
-    suspend fun getAnimationCharacterList(id: Int): Resource<AnimationCharacterDetail> = safeApiCall(AnimationCharacterDetailApiMapper()) {
-        api.getAnimationCharacter(id)
+    suspend fun getAnimationCharacterList(id: Int): Resource<CompleteInfo> = safeApiCall(CompleteInfoApiMapper()) {
+        api.getAnimationCharacterList(id)
     }
 
 }

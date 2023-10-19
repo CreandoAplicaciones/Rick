@@ -24,6 +24,8 @@
 
     <style name="text_roboto_bold_16" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="text_roboto_regular_20" parent="Widget.AppCompat.TextView">
@@ -33,6 +35,7 @@
     <style name="text_roboto_bold_20" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="TabsStyle" parent="Widget.Design.TabLayout">

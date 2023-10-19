@@ -1,4 +1,4 @@
-package com.rick.and.morty.ui.view.home
+package com.rick.and.morty.ui.view.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,16 +9,16 @@ import com.rick.and.morty.databinding.ItemListBinding
 import com.rick.and.morty.domain.model.AnimationCharacter
 
 
-class HomeAdapter(private val characters: List<AnimationCharacter>, private val listener: (Int) -> Unit) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class DetailAdapter(private val characters: List<AnimationCharacter>) : RecyclerView.Adapter<DetailAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
         ItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun getItemCount(): Int = characters.size
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) { holder.bind(characters[position], listener) }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) { holder.bind(characters[position]) }
 
     class ViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(character: AnimationCharacter, listener: (Int) -> Unit) = with(binding) {
+        fun bind(character: AnimationCharacter) = with(binding) {
             txtName.text = character.name
             txtGender.text = character.gender
             txtSpecies.text = character.species
@@ -48,7 +48,6 @@ class HomeAdapter(private val characters: List<AnimationCharacter>, private val 
                 .centerCrop()
                 .into(imgIcon)
 
-            layout.setOnClickListener { listener(character.id) }
         }
     }
 }

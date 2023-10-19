@@ -6,6 +6,7 @@ import android.net.NetworkCapabilities
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import com.rick.and.morty.R
 import com.rick.and.morty.domain.model.AnimationCharacter
 import java.text.Normalizer
 
@@ -46,6 +47,36 @@ class Utils {
             }
         }
 
+        fun getGenderIcon(gender: String): Int {
+            return when (gender) {
+                "Female" -> R.drawable.icon_female
+                "Male" -> R.drawable.icon_male
+                else -> R.drawable.icon_unknown
+            }
+        }
+
+        fun getStatusIcon(status: String): Int {
+            return when (status) {
+                "Alive" -> R.drawable.icon_alive
+                "Dead" -> R.drawable.icon_dead
+                else -> R.drawable.icon_unknown
+            }
+        }
+
+        fun getSpeciesIcon(species: String): Int {
+            return when (species) {
+                "Human" -> R.drawable.icon_human
+                "Alien" -> R.drawable.icon_alien
+                else -> R.drawable.icon_unknown
+            }
+        }fun getOriginIcon(origin: String): Int {
+            return when (origin) {
+                "Earth (C-137)" -> R.drawable.icon_eart_137
+                "Earth (Replacement Dimension)" -> R.drawable.icon_eart
+                "Abadango" -> R.drawable.icon_abandango
+                else -> R.drawable.icon_unknown
+            }
+        }
 
     }
 

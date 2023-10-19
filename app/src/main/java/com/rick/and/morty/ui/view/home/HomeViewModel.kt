@@ -4,7 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.rick.and.morty.common.Utils
 import com.rick.and.morty.domain.base.Resource
 import com.rick.and.morty.domain.model.AnimationCharacter
-import com.rick.and.morty.domain.usercase.GetAnimationCharacterUseCase
+import com.rick.and.morty.domain.usercase.GetAnimationCharacterListUseCase
 import com.rick.and.morty.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val getAnimationCharacterUseCase: GetAnimationCharacterUseCase): BaseViewModel() {
+class HomeViewModel @Inject constructor(private val getAnimationCharacterListUseCase: GetAnimationCharacterListUseCase): BaseViewModel() {
 
     sealed class Event {
         object SetUp: Event()
@@ -22,6 +22,7 @@ class HomeViewModel @Inject constructor(private val getAnimationCharacterUseCase
         data class ShowLoading(val isVisible: Boolean): Event()
         data class ShowRetry(val isVisible: Boolean): Event()
         data class ShowToast(val name: String): Event()
+        data class GoToDetail(val id: Int): Event()
     }
     private val eventChannel = Channel<Event>(Channel.BUFFERED)
     val eventsFlow = eventChannel.receiveAsFlow()
@@ -47,7 +48,7 @@ class HomeViewModel @Inject constructor(private val getAnimationCharacterUseCase
         viewModelScope.launch {
             doAction(Event.ShowLoading(true))
             for (i in 1..42) {
-                when (val result = getAnimationCharacterUseCase.invoke(i)) {
+                when (val result = getAnimationCharacterListUseCase.invoke(i)) {
                     is Resource.Success -> {
                         animationCharacterList.addAll(result.value.list)
                     }
@@ -73,11 +74,9 @@ class HomeViewModel @Inject constructor(private val getAnimationCharacterUseCase
         doAction(Event.ShowLoading(false))
     }
 
-    fun didSelectedItem(animationCharacter: AnimationCharacter) {
-        doAction(Event.ShowToast(animationCharacter.name))
-
+    fun didSelectedItem(id: Int) {
+        doAction(Event.GoToDetail(id))
     }
-
 
     fun retry() {
         retrieveAnimationCharacterList()

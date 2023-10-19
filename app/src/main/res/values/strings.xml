@@ -13,4 +13,12 @@
     <string name="home_retry_description">Algo salió mal</string>
 
 
+    <string name="detail_status">Estado: %1$s</string>
+    <string name="detail_species">Especie: %1$s</string>
+    <string name="detail_gender">Género: %1$s</string>
+    <string name="detail_origen">Origen: %1$s</string>
+    <string name="detail_location">%1$s vive en %2$s</string>
+    <string name="detail_episode">%1$s sale en %2$s episodios</string>
+
+
 </resources>

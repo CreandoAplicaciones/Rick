@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.rick.and.morty.R
 import com.rick.and.morty.common.Utils
 import com.rick.and.morty.common.extension.observe
 import com.rick.and.morty.databinding.FragmentHomeBinding
@@ -52,6 +54,9 @@ class HomeFragment: BaseFragment() {
             is ShowLoading -> binding.progressBar.isVisible = model.isVisible
             is ShowRetry -> binding.constraintLayoutRetry.isVisible = model.isVisible
             is ShowToast -> activity?.let { actovity-> Utils.toast(actovity,model.name ) }
+            is GoToDetail -> findNavController().navigate(R.id.action_homeFragment_to_detailFragment, Bundle().apply {
+                putInt("argumentoInt", model.id)
+            })
         }
     }
 
