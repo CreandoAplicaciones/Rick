@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Rick and Morty</string>
+
+    <string name="common_accept">Aceptar</string>
+    <string name="common_no_internet">Sin conexión a Internet</string>
+    <string name="common_there_is_no_network_connection">No hay una conexión de red activa. Por favor, inténtelo más tarde.</string>
+    <string name="common_retry">Reintentar</string>
+    <string name="common_error_generic">error</string>
+    <string name="common_error_network">error</string>
+    <string name="common_error_mapping">error</string>
+
+    <string name="home_person_search">Buscar personaje</string>
+    <string name="home_retry_description">Algo salió mal</string>
+
+
+</resources>

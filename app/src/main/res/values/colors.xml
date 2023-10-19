@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#9d9c9c</color>
+    <color name="grey_background">#E8E6E6</color>
+
+    <color name="blue_5">#EDD9F8</color>
+    <color name="purple_10">#e0aaff</color>
+    <color name="purple_20">#c77dff</color>
+    <color name="purple_30">#9d4edd</color>
+    <color name="purple_40">#7b2cbf</color>
+    <color name="purple_50">#5a189a</color>
+    <color name="purple_60">#3c096c</color>
+    <color name="purple_70">#240046</color>
+    <color name="purple_80">#10002b</color>
+    <color name="red">#FF0000</color>
+    <color name="golden">#FFD700</color>
+
+    <color name="gnt_test_background_color">#00F4F4F4</color>
+    <color name="gnt_test_background_color_2">#00A3A3A3</color>
+    <color name="gnt_black">#000000</color>
+    <color name="gnt_white">#FFFFFF</color>
+    <color name="gnt_red">#FF0000</color>
+    <color name="gnt_green">#00FF00</color>
+    <color name="gnt_blue">#4285f4</color>
+    <color name="gnt_ad_green">#3A6728</color>
+    <color name="gnt_gray">#808080</color>
+    <color name="gnt_outline">#E0E0E0</color>
+
+</resources>
